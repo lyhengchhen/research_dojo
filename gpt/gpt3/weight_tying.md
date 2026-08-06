@@ -1,3 +1,4 @@
+# Weigth_tying
 Weigth_tying is the operation that we use the same matrix for two different jobs in the model, instead of learning two separate matrices.
 
 and the two matrices involved: 
