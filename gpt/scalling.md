@@ -28,4 +28,6 @@ Larger model are sample-efficient, such that optimally compute-efficient trainin
 So, we would rather train a huge model on comparatively little data and stopping early, rather than training a smaller model to convergence. 
 
 - Kaplan's exponents implied "go big on parameters, use relatively little data"
-- Chinchilla (2022) later corrected this, showing N and D should scale **equally**, which is reshaping how modern LLMs are trained
+- Chinchilla (2022) later corrected this, showing N and D should scale **equally**, meaning that N and D grow with the same exponent relative to C (~0.5 each), not that N and D are numerically equal. and the actual ratio is ~20 tokens per parameter. 
+
+the point that Kaplan missed: they prioritized the N growth over the D, which was the reason why ChatGPT3 model was reportedly undertrained
