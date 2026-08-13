@@ -19,8 +19,9 @@ and after computing attention scores and weighting the values, the result passes
 
 $$AttnOut = Attention(Q, K, V)W_{o}$$
 
-- **Feed-forward network:** the result gets mutliplied by two more weight matrices, with a nonlinearity in between 
-$$FFOut = \sigma (hW_{1})W_{2}$$
+- **Feed-forward network:** the result gets mutliplied by two more weight matrices, with a nonlinearity in between $$FFOut = \sigma (hW_{1})W_{2}$$
+    - Projected the d_model to 4 x d_model
+    - Projected the 4 x d_model to d_model  
 
 Thus, in a single transformer layer, weights are applied 6 times ($W_{Q}, W_{K}, W_{V}, W_{o}, W_{1}, W_{2}$) and this is exactly where the $12 \cdot d_{model}^{2}$ parameter formula comes from (roughly 4 attention matrices + 2 FF matrices, each contributing $d_{model}^{2}$) or multiple of it
 
