@@ -5,7 +5,7 @@ There are 3 important step to get the InstructGPT:
 - Supervised Fine-tuning (SFT): Human labelers write high-quality example repsonses to a range of prompts. and this give the model a decent starting policy that already looks more like an assistant.
 - Reward Model (RM): for a given prompt, the SFT model generate several different responses. And the human labelers rank these repsonses from best to worst. and a separate model (initialized from the SFT model, with a scalar output head) is trained to predict these rankings. aka it is learning how to score the response according to the human preference. 
 - Reinforcement Learning via PPO: the SFT model then further optimized using the Reinforcement learning (PPO), where the reward signal comes from the reward model (RM) in step 2. The policy generates a responses, the RM scores it, and PPO updates the policy to produce higher-scoring responses. 
-    A KL-divergence penalty against the original SFT model is included to prevent the policy from drifting too far and "gaming" the reward model or degenerating into gibberish. 
+    A KL-divergence penalty against the original SFT model is included to prevent the policy from drifting too far from reward model or degenerating into gibberish. 
 
 and the whole pipeline is RLHF
 
