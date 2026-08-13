@@ -10,7 +10,7 @@ There are 3 important step to get the InstructGPT:
     KL Divergence (Kullback-Leibler) measures how different one probability distribution is from another. In this case, we have two policies, so we are trying to compare the old policy and the new policy, 
     - Small KL divergence = small shift in probability rate -> safe update 
     - Big KL divergence = big shift in probability rate -> safe update
-    we would prefer the small KV divergence, becuase we dont want the policy to change its mind so fast, even if the gradient updates a lot. To simply, we want a smooth learning curve. 
+    we would prefer the small KL divergence, becuase we dont want the policy to change its mind so fast, even if the gradient updates a lot. To simply, we want a smooth learning curve. 
 
 and the whole pipeline is RLHF
 
