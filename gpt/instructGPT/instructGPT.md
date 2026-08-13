@@ -7,6 +7,11 @@ There are 3 important step to get the InstructGPT:
 - Reinforcement Learning via PPO: the SFT model then further optimized using the Reinforcement learning (PPO), where the reward signal comes from the reward model (RM) in step 2. The policy generates a responses, the RM scores it, and PPO updates the policy to produce higher-scoring responses. 
     A KL-divergence penalty against the original SFT model is included to prevent the policy from drifting too far from reward model or degenerating into gibberish. 
 
+    KL Divergence (Kullback-Leibler) measures how different one probability distribution is from another. In this case, we have two policies, so we are trying to compare the old policy and the new policy, 
+    - Small KL divergence = small shift in probability rate -> safe update 
+    - Big KL divergence = big shift in probability rate -> safe update
+    we would prefer the small KV divergence, becuase we dont want the policy to change its mind so fast, even if the gradient updates a lot. To simply, we want a smooth learning curve. 
+
 and the whole pipeline is RLHF
 
 The InstructGPT presented astonishing result: 
