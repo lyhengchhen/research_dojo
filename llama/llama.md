@@ -20,6 +20,7 @@ besides everything that is changed, the
 #### The training-compute tradeoff
 so this paper has a lot to do with the scalling law by Chinchilla et al., guiding us to understand why over-training a small model past Chinchilla-optimal makes sense when the inference cost is greater than training cost. so scalling law infer that for a 10B model, we have to train it on 200B token, then stop it. but for this paper, they just ignore that stopping point, they took a smaller model 7B and then train it iteratively on the way to 1 trilion tokens, and surprisingly the model kept getting better. 
 
+"More parameters will lead to bettter performance but Hoffmann et al. (2022) shows that, for a given compute budgetm the best performances are not achieved by the largest models, but by smaller models trained on more data."
+
 #### Data Curation
 It build upon the public dataset only. and it also set up the floor for RAG and later synthetix data/fine tuning discussions (LoRA/QLoRA) 
-
