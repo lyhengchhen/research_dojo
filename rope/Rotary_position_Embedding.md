@@ -10,7 +10,6 @@ RoPE is a way to tell a transformer model where each token is in a sequence, by 
 - **Independence of Positional Embeddings:** Each positional embedding is independent of others. 
     Meaning that in the model's pov, the difference between the p 1 and p2 is the same as between p1 and p500. but, intuitively, p1 and p2 should be more closely related than p500, which is significantly farther away. 
 
-
 Relative positional embeddings focuses on the distance between pairs of tokens. It does not add a positional vector to the word vector directly. But, it instead alters the attention mechanism to incorporate relative positional information. 
 
 The challenge Relative Positional Embeddings pose:
@@ -40,3 +39,6 @@ Where M is the absolute position in the sentence.
 **Notice:** for higher dimensions, the vector is split into 2D chunks, and each pair is rotated independently. 
 
 
+**Limitation:** Mostly Black box
+- The model incorporates RoPe can effectively reach the converge point faster than the baseline model, but there is no thorough explainable. So it is basically a black box problem
+- Although, it is proved that it is more favourable to the property of long-term decay for intern-token products, which is suprisingly alike to the conventional positional embedding mechanism, the model with RoPE tend to work better on long texts. -- no explaination
